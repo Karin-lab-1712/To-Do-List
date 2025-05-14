@@ -3,7 +3,8 @@ Client-Server desktop application for To Do list.
 Client: WPF
 *****************************************************
 Server: (ASP.NET Core + SignalR)
-This is a server-side real-time To-Do list application built using ASP.NET Core and SignalR. It supports full CRUD operations, real-time broadcasting to all connected clients, and a scalable architecture using Entity Framework and SQLite.
+This is a server-side real-time To-Do list application built using ASP.NET Core and SignalR. 
+It supports full CRUD operations, real-time broadcasting to all connected clients, and a scalable architecture using Entity Framework and SQLite.
 
 Technologies Used:
 ASP.NET Core
@@ -15,7 +16,6 @@ Serilog (for logging)
 Features:
 Real-Time Communication with SignalR
 Implemented SignalR via TasksHub for real-time broadcasting.
-On every task change (Add, Update, Delete), the server sends updates using:
 *****************************************************
 Database
 Using SQLite instead of SQL Server:
