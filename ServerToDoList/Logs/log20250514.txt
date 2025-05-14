@@ -1,0 +1,53 @@
+2025-05-14 14:43:05.094 +03:00 [INF] Executed DbCommand (126ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2025-05-14 14:43:05.972 +03:00 [INF] Now listening on: https://localhost:7273
+2025-05-14 14:43:05.973 +03:00 [INF] Now listening on: http://localhost:5219
+2025-05-14 14:43:05.978 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-05-14 14:43:05.982 +03:00 [INF] Hosting environment: Development
+2025-05-14 14:43:05.984 +03:00 [INF] Content root path: C:\Users\karinb\OneDrive - Candela\Desktop\חיפוש עבודה\WpfToDoList\WpfToDoList\ServerToDoList
+2025-05-14 14:43:06.503 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7273/tasksHub/negotiate?negotiateVersion=1 - 0
+2025-05-14 14:43:06.571 +03:00 [INF] Executing endpoint '/tasksHub/negotiate'
+2025-05-14 14:43:06.735 +03:00 [INF] Executed endpoint '/tasksHub/negotiate'
+2025-05-14 14:43:06.738 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7273/tasksHub/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 238.8611ms
+2025-05-14 14:43:07.495 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7273/tasksHub?id=7FZK4o9uV9lpnmEy-MT1uA - -
+2025-05-14 14:43:07.622 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7273/swagger/index.html - -
+2025-05-14 14:43:07.735 +03:00 [INF] Executing endpoint '/tasksHub'
+2025-05-14 14:43:07.850 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7273/swagger/index.html - - - 404 0 - 228.4753ms
+2025-05-14 14:43:08.349 +03:00 [INF] Client connected: D5dFlBIo9pFEbQU32lPsuw
+2025-05-14 14:43:08.411 +03:00 [INF] [GetAllTasks] Called by client
+2025-05-14 14:43:08.896 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "t"."Id", "t"."Description", "t"."IsDone", "t"."IsEditing"
+FROM "Tasks" AS "t"
+2025-05-14 14:43:34.919 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (Size = 21), @p1='?' (DbType = Boolean), @p2='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Tasks" ("Description", "IsDone", "IsEditing")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-05-14 14:43:34.946 +03:00 [INF] [AddTask] Task saved to DB: test the add task log
+2025-05-14 14:43:34.957 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "t"."Id", "t"."Description", "t"."IsDone", "t"."IsEditing"
+FROM "Tasks" AS "t"
+2025-05-14 14:45:14.277 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "t"."Id", "t"."Description", "t"."IsDone", "t"."IsEditing"
+FROM "Tasks" AS "t"
+WHERE "t"."Id" = @__p_0
+LIMIT 1
+2025-05-14 14:45:14.341 +03:00 [INF] [DeleteTask] - test the log - was deleted
+2025-05-14 14:45:14.349 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "Tasks"
+WHERE "Id" = @p0
+RETURNING 1;
+2025-05-14 14:45:14.356 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "t"."Id", "t"."Description", "t"."IsDone", "t"."IsEditing"
+FROM "Tasks" AS "t"
+2025-05-14 14:47:36.248 +03:00 [INF] Client connected: IZOHIm9WloQjoNoXzDmsoQ
+2025-05-14 14:47:36.497 +03:00 [INF] [GetAllTasks] Called by client
+2025-05-14 14:48:11.922 +03:00 [INF] [AddTask] Task saved to DB: test log 1
+2025-05-14 14:48:18.595 +03:00 [INF] [AddTask] Task saved to DB: test log 2
+2025-05-14 14:48:24.665 +03:00 [INF] [DeleteTask] - public async Task<List<TaskModel>> GetAllTasks()public async Task<List<TaskModel>> GetAllTasks()public async Task<List<TaskModel>> GetAllTasks() - was deleted
+2025-05-14 14:48:26.978 +03:00 [INF] [UpdateTaskStatus] - test log 1 -  + is done
+2025-05-14 14:48:27.799 +03:00 [INF] [UpdateTaskStatus] - add documentation -  + is done
+2025-05-14 14:51:24.449 +03:00 [INF] Client connected: tzbRrOJkolSeEWLHgJ7j6g
+2025-05-14 14:51:24.806 +03:00 [INF] [GetAllTasks] Called by client
+2025-05-14 14:51:28.568 +03:00 [INF] [UpdateTaskStatus] ** add ReadMe **  + is done
+2025-05-14 14:51:33.663 +03:00 [INF] [DeleteTask]  ** test log 1 ** - was deleted
+2025-05-14 14:51:35.848 +03:00 [INF] [UpdateTaskStatus] ** add ReadMe **  + isn't done
