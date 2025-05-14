@@ -99,11 +99,18 @@ namespace WpfToDoList
         // Adds a new task to the list via the SignalR hub.
         private async Task AddTask()
         {
-            if (!string.IsNullOrWhiteSpace(TaskText))
+            try
             {
-                await connection.InvokeAsync("AddTask", TaskText);
-                TaskText = string.Empty;
-            }           
+                if (!string.IsNullOrWhiteSpace(TaskText))
+                {
+                    await connection.InvokeAsync("AddTask", TaskText);
+                    TaskText = string.Empty;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error adding task: {ex.Message}");
+            }    
         }
 
         // Deletes the task from the server via SignalR.
